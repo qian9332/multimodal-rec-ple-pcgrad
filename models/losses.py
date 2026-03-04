@@ -277,9 +277,12 @@ class MultimodalLoss(nn.Module):
         losses["final_loss"] = self.main_loss(final_pred, targets)
         
         # 稀疏度损失
-        losses["sparsity_loss"] = (
-            predictions["image_sparsity_loss"] + predictions["text_sparsity_loss"]
-        ) * self.config.gate_sparsity_lambda if hasattr(self.config, 'gate_sparsity_lambda') else 0
+        sparsity_lambda = getattr(self.config, 'gate_sparsity_lambda', 0.1)
+        sparsity_sum = predictions["image_sparsity_loss"] + predictions["text_sparsity_loss"]
+        if isinstance(sparsity_sum, torch.Tensor):
+            losses["sparsity_loss"] = sparsity_sum * sparsity_lambda
+        else:
+            losses["sparsity_loss"] = torch.tensor(0.0, device=targets.device)
         
         # 总损失
         losses["total_loss"] = (

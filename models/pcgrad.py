@@ -176,6 +176,10 @@ class PCGradOptimizer:
         """
         task_gradients = {}
         
+        # 首先获取所有参数的形状信息
+        param_shapes = [(p.numel(), p.shape) for p in model.parameters() if p.requires_grad]
+        total_params = sum(s[0] for s in param_shapes)
+        
         for task_name, loss in losses.items():
             # 清零梯度
             self.optimizer.zero_grad()
@@ -183,11 +187,15 @@ class PCGradOptimizer:
             # 计算梯度
             loss.backward(retain_graph=True)
             
-            # 收集梯度
+            # 收集梯度（按固定顺序）
             gradients = []
             for param in model.parameters():
-                if param.grad is not None:
-                    gradients.append(param.grad.clone().flatten())
+                if param.requires_grad:
+                    if param.grad is not None:
+                        gradients.append(param.grad.clone().flatten())
+                    else:
+                        # 如果没有梯度，用零填充
+                        gradients.append(torch.zeros(param.numel(), device=param.device))
             
             if gradients:
                 task_gradients[task_name] = torch.cat(gradients)

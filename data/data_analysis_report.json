@@ -1,0 +1,62 @@
+{
+  "beauty": {
+    "reviews": {
+      "total_reviews": 100,
+      "unique_users": 32,
+      "unique_items": 99,
+      "avg_user_reviews": 3.125,
+      "avg_item_reviews": 1.0101010101010102,
+      "positive_ratio": 0.73,
+      "avg_text_length": 172.22
+    },
+    "items": {
+      "total_items": 100,
+      "items_with_images": 100,
+      "avg_images": 5.37,
+      "avg_rating": 4.010000000000001,
+      "avg_rating_number": 723.76
+    },
+    "long_tail": {
+      "user_gini": 0.3625,
+      "item_gini": 0.009898989898989899,
+      "single_interaction_users": 10,
+      "single_interaction_items": 98
+    },
+    "sparsity": {
+      "num_users": 32,
+      "num_items": 99,
+      "sparsity": 0.9684343434343434,
+      "density": 0.031565656565656575
+    }
+  },
+  "sports": {
+    "reviews": {
+      "total_reviews": 10000,
+      "unique_users": 2042,
+      "unique_items": 9415,
+      "avg_user_reviews": 4.897159647404505,
+      "avg_item_reviews": 1.0621348911311737,
+      "positive_ratio": 0.8478,
+      "avg_text_length": 343.5246
+    },
+    "items": {
+      "total_items": 5000,
+      "items_with_images": 5000,
+      "avg_images": 4.0764,
+      "avg_rating": 4.26878,
+      "avg_rating_number": 484.5412
+    },
+    "long_tail": {
+      "user_gini": 0.6409595494613124,
+      "item_gini": 0.05633047265002655,
+      "single_interaction_users": 810,
+      "single_interaction_items": 8970
+    },
+    "sparsity": {
+      "num_users": 2042,
+      "num_items": 9415,
+      "sparsity": 0.9994798555871052,
+      "density": 0.0005201444128948296
+    }
+  }
+}
