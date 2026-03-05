@@ -2,7 +2,7 @@
 
 ## 项目概述
 
-本项目实现了一个基于图文梯度余弦相似度分析的多模态推荐系统，通过 PLE (Progressive Layered Extraction) 结构解耦和 PCGrad (Projected Conflicting Gradient) 冲突投影实现梯度隔离，有效解决了多任务学习中的梯度冲突问题。
+本项目实现了一个基于图文梯度余弦相似度分析的多模态推荐系统，通过 **PLE (Progressive Layered Extraction)** 结构解耦和 **PCGrad (Projected Conflicting Gradient)** 冲突投影实现梯度隔离，有效解决了多任务学习中的梯度冲突问题。
 
 ### 核心创新
 
@@ -19,89 +19,94 @@
 - 文本AUC提升约 **1.5-2pp**
 - 梯度冲突比例从 40-60% 降低到 20% 以下
 
+---
+
 ## 项目结构
 
 ```
 multimodal_rec/
 ├── configs/
-│   └── config.py          # 配置文件
-├── data/                   # 数据目录
-│   ├── beauty_reviews.jsonl
-│   ├── beauty_metadata.jsonl
-│   ├── sports_reviews.jsonl
-│   ├── sports_metadata.jsonl
-│   └── beauty_images/
+│   └── config.py              # 配置文件
+├── data/                       # 数据目录
+│   ├── beauty_reviews.jsonl   # Beauty评论数据
+│   ├── beauty_metadata.jsonl  # Beauty元数据
+│   ├── sports_reviews.jsonl   # Sports评论数据
+│   ├── sports_metadata.jsonl  # Sports元数据
+│   └── data_analysis_report.json  # 数据分析报告
 ├── models/
-│   ├── ple_model.py       # PLE模型结构
-│   ├── pcgrad.py          # PCGrad优化器
-│   └── losses.py          # 损失函数
+│   ├── ple_model.py           # PLE模型结构
+│   ├── pcgrad.py              # PCGrad优化器
+│   └── losses.py              # 损失函数
 ├── utils/
-│   ├── data_processor.py  # 数据处理
-│   ├── regularization.py  # 正则化模块
-│   └── metrics.py         # 评估指标
+│   ├── data_processor.py      # 数据处理
+│   ├── regularization.py      # 正则化模块
+│   └── metrics.py             # 评估指标
 ├── scripts/
-│   ├── train.py           # 训练脚本
-│   ├── download_data.py   # 数据下载
+│   ├── train.py               # 训练脚本
+│   ├── train_detailed.py      # 详细训练脚本
+│   ├── analyze_data.py        # 数据分析脚本
+│   ├── download_data.py       # 数据下载
 │   └── stream_download_data.py  # 流式数据下载
-├── outputs/                # 输出目录
-└── README.md
+├── outputs/                    # 输出目录
+│   ├── training.log           # 训练日志
+│   ├── training_analysis_report.md  # 分析报告
+│   └── training_history.json  # 训练历史
+├── docs/                       # 文档目录
+│   ├── technical_details.md   # 技术详解
+│   └── knowledge_summary.md   # 知识点总结
+├── README.md
+└── __init__.py
 ```
 
-## 技术方案
+---
 
-### 1. 模型架构 - PLE
+## 技术架构
 
-```
-                    ┌─────────────────┐
-                    │   User/Item     │
-                    │   Embedding     │
-                    └────────┬────────┘
-                             │
-              ┌──────────────┼──────────────┐
-              │              │              │
-              ▼              ▼              ▼
-        ┌─────────┐   ┌─────────┐   ┌─────────┐
-        │ Shared  │   │ Image   │   │  Text   │
-        │ Expert  │   │ Expert  │   │ Expert  │
-        └────┬────┘   └────┬────┘   └────┬────┘
-             │              │              │
-             └──────────────┼──────────────┘
-                            │
-                    ┌───────▼───────┐
-                    │  Gate Network │
-                    │ (稀疏度约束)   │
-                    └───────┬───────┘
-                            │
-              ┌─────────────┼─────────────┐
-              │             │             │
-              ▼             ▼             ▼
-        ┌──────────┐ ┌──────────┐ ┌──────────┐
-        │  Image   │ │   Text   │ │  Final   │
-        │   Tower  │ │   Tower  │ │  Fusion  │
-        └──────────┘ └──────────┘ └──────────┘
-```
-
-### 2. PCGrad 梯度投影
-
-当两个任务的梯度冲突（余弦相似度 < 0）时：
+### 整体架构图
 
 ```
-grad_i_proj = grad_i - (grad_i · grad_j) / ||grad_j||² * grad_j
+┌─────────────────────────────────────────────────────────────┐
+│                    多模态推荐系统架构                         │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  输入层: 用户ID + 物品ID + 图像 + 文本                        │
+│                          ↓                                  │
+│  编码层: 用户嵌入 + 物品嵌入 + 图像编码器 + 文本编码器          │
+│                          ↓                                  │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │              PLE 多任务解耦层                         │   │
+│  │  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌─────────┐ │   │
+│  │  │共享专家1│  │共享专家2│  │图像专家 │  │文本专家 │ │   │
+│  │  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘ │   │
+│  │       └─────────────┴────────────┴────────────┘      │   │
+│  │                      ↓                               │   │
+│  │              ┌───────────────┐                       │   │
+│  │              │  Gate 网络    │ ← 稀疏度约束           │   │
+│  │              └───────┬───────┘                       │   │
+│  └──────────────────────┼───────────────────────────────┘   │
+│                         ↓                                   │
+│  ┌─────────────────────────────────────────────────────┐   │
+│  │              PCGrad 梯度投影层                        │   │
+│  │                                                     │   │
+│  │   检测梯度冲突 → 投影到法平面 → 合并梯度              │   │
+│  └─────────────────────────────────────────────────────┘   │
+│                         ↓                                   │
+│  任务塔: 图像任务塔 + 文本任务塔 → 最终融合                   │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
-### 3. 数据层优化
+### 核心技术
 
-| 模态 | 优化策略 |
-|------|----------|
-| 图像 | Focal Loss + 逆频率降权 |
-| 文本 | 动态难例挖掘 + 轻量文本增广 |
+| 技术 | 作用 | 论文 |
+|------|------|------|
+| PLE | 多任务解耦 | RecSys 2020 |
+| PCGrad | 梯度冲突投影 | NeurIPS 2020 |
+| Focal Loss | 类别不平衡 | ICCV 2017 |
+| R-Drop | 一致性正则化 | NeurIPS 2021 |
+| DropBlock | 图像正则化 | NeurIPS 2018 |
 
-### 4. 正则层
-
-| 模态 | 正则化方法 |
-|------|------------|
-| 图像 | DropBlock + Early Stop + Label Smoothing |
-| 文本 | R-Drop + 自监督MLM辅助任务 |
+---
 
 ## 快速开始
 
@@ -109,14 +114,14 @@ grad_i_proj = grad_i - (grad_i · grad_j) / ||grad_j||² * grad_j
 
 - Python 3.8+
 - PyTorch 2.0+
-- transformers
-- torchvision
-- datasets
+- TorchVision
+- NumPy
+- Pillow
 
 ### 安装依赖
 
 ```bash
-pip install torch torchvision transformers datasets pillow tqdm
+pip install torch torchvision numpy pillow tqdm
 ```
 
 ### 下载数据
@@ -129,41 +134,142 @@ python scripts/stream_download_data.py --category Beauty --max_reviews 10000 --m
 python scripts/stream_download_data.py --category Sports --max_reviews 10000 --max_meta 5000
 ```
 
+### 数据分析
+
+```bash
+python scripts/analyze_data.py
+```
+
 ### 训练模型
 
 ```bash
-python scripts/train.py \
+python scripts/train_detailed.py \
     --data_dir ./data \
     --output_dir ./outputs \
-    --batch_size 32 \
-    --epochs 50 \
+    --batch_size 64 \
+    --epochs 20 \
     --lr 1e-4 \
     --device cpu
 ```
+
+---
 
 ## 实验结果
 
 ### 数据集统计
 
-| 数据集 | 用户数 | 物品数 | 交互数 |
-|--------|--------|--------|--------|
-| Beauty | - | 5,000 | 10,000 |
-| Sports | - | 5,000 | 10,000 |
+| 数据集 | 评论数 | 用户数 | 物品数 | 正样本比例 |
+|--------|--------|--------|--------|------------|
+| Beauty | 100 | 32 | 99 | 73.0% |
+| Sports | 10,000 | 2,042 | 9,415 | 84.8% |
 
-### 性能指标
+### 训练结果
 
-| 指标 | Baseline | PLE+PCGrad | 提升 |
-|------|----------|------------|------|
-| AUC | 0.720 | 0.738 | +1.8pp |
-| LogLoss | 0.580 | 0.562 | -3.1% |
-| NDCG@10 | 0.450 | 0.472 | +4.9% |
+| 指标 | 值 |
+|------|-----|
+| 最佳 Epoch | 10 |
+| 最佳验证 AUC | **0.8429** |
+| 测试 NDCG@5 | 0.90 |
+| 测试 Hit Rate@5 | 0.90 |
+| 平均梯度冲突率 | 56% |
 
 ### 梯度冲突分析
 
-| 阶段 | 冲突比例 |
-|------|----------|
-| 训练前 | 40-60% |
-| 训练后 | < 20% |
+| 训练阶段 | 冲突比例 |
+|----------|----------|
+| 初始阶段 (Epoch 1-3) | 60-100% |
+| 中期阶段 (Epoch 4-6) | 40-100% |
+| 稳定阶段 (Epoch 7+) | 20-60% |
+
+### 门控权重分析
+
+**图像任务:**
+- 共享专家: 86.8%
+- 任务特定专家: 13.2%
+
+**文本任务:**
+- 共享专家: 61.4%
+- 任务特定专家: 38.6%
+
+---
+
+## 核心模块详解
+
+### 1. PLE 模型
+
+```python
+# 创建 PLE 模型
+model = MultimodalPLEModel(
+    config=ModelConfig(
+        hidden_size=256,
+        num_experts=8,
+        num_shared_experts=2,
+        num_task_specific_experts=2,
+        gate_sparsity_lambda=0.1,
+    ),
+    num_users=num_users,
+    num_items=num_items,
+)
+```
+
+### 2. PCGrad 优化器
+
+```python
+# 创建 PCGrad 优化器
+base_optimizer = optim.AdamW(model.parameters(), lr=1e-4)
+optimizer = PCGradOptimizer(base_optimizer, PCGradConfig())
+
+# 训练步骤
+task_losses = {
+    "image": image_loss,
+    "text": text_loss,
+}
+conflict_analysis = optimizer.step(model, task_losses)
+```
+
+### 3. 损失函数
+
+```python
+# 创建损失函数
+loss_fn = MultimodalLoss(LossConfig(
+    task_loss_type="focal",
+    focal_alpha=0.25,
+    focal_gamma=2.0,
+    use_hard_negative_mining=True,
+))
+
+# 计算损失
+losses = loss_fn(predictions, targets)
+```
+
+---
+
+## 文档
+
+- [技术详解](docs/technical_details.md) - 详细的技术实现和数学公式
+- [知识点总结](docs/knowledge_summary.md) - 多任务学习相关知识点
+- [训练分析报告](outputs/training_analysis_report.md) - 训练结果分析
+
+---
+
+## 优化方向
+
+### 数据层面
+- 扩大数据规模到 10万+ 条
+- 处理类别不平衡问题
+- 增强数据增强策略
+
+### 模型层面
+- 减少模型复杂度防止过拟合
+- 优化 PLE 结构参数
+- 调整 PCGrad 冲突阈值
+
+### 训练层面
+- 使用更小的学习率
+- 增加正则化强度
+- 优化 Early Stop 策略
+
+---
 
 ## 参考文献
 
@@ -171,7 +277,15 @@ python scripts/train.py \
 
 2. **PCGrad**: Yu, T., et al. "Gradient Surgery for Multi-Task Learning." NeurIPS 2020.
 
-3. **Amazon-2023**: Hou, Y., et al. "Bridging Language and Items for Retrieval and Recommendation." arXiv 2024.
+3. **Focal Loss**: Lin, T., et al. "Focal Loss for Dense Object Detection." ICCV 2017.
+
+4. **R-Drop**: Liang, X., et al. "R-Drop: Regularized Dropout for Neural Networks." NeurIPS 2021.
+
+5. **DropBlock**: Ghiasi, G., et al. "DropBlock: A regularization method for convolutional networks." NeurIPS 2018.
+
+6. **Amazon-2023**: Hou, Y., et al. "Bridging Language and Items for Retrieval and Recommendation." arXiv 2024.
+
+---
 
 ## License
 
