@@ -1,0 +1,467 @@
+2026-03-04 14:44:16,390 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 多模态推荐系统 - PLE + PCGrad 梯度隔离方案
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 开始时间: 2026-03-04 14:44:16
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 输出目录: /home/z/my-project/multimodal_rec/outputs
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 训练配置:
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Batch Size: 64
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Epochs: 20
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Learning Rate: 0.0001
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Device: cpu
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Seed: 42
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 模型配置:
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Hidden Size: 256
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Num Experts: 8
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Num Shared Experts: 2
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Num Task Experts: 2
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Gate Sparsity Lambda: 0.1
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - PCGrad配置:
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Enable PCGrad: True
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Conflict Threshold: 0.0
+2026-03-04 14:44:16,391 - MultimodalRec - INFO -   - Gradient Clip Norm: 1.0
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - 加载数据...
+2026-03-04 14:44:16,391 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,459 - MultimodalRec - INFO - 加载了 5000 条评论, 1 个物品
+2026-03-04 14:44:16,460 - MultimodalRec - INFO - 过滤低频交互...
+2026-03-04 14:44:16,462 - MultimodalRec - INFO - 创建数据加载器...
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - 训练批次数: 5
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - 验证批次数: 1
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - 测试批次数: 1
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,465 - MultimodalRec - INFO - 创建模型...
+2026-03-04 14:44:16,466 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,618 - MultimodalRec - INFO - 模型参数: 总计 11,741,453, 可训练 11,741,453
+2026-03-04 14:44:16,618 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,618 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,618 - MultimodalRec - INFO - 开始训练...
+2026-03-04 14:44:16,618 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,619 - MultimodalRec - INFO - 
+2026-03-04 14:44:16,619 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,619 - MultimodalRec - INFO - Epoch 1/20
+2026-03-04 14:44:16,619 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:44:16,619 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:46:22,702 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 多模态推荐系统 - PLE + PCGrad 梯度隔离方案
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 开始时间: 2026-03-04 14:46:22
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 输出目录: /home/z/my-project/multimodal_rec/outputs
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 训练配置:
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Batch Size: 64
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Epochs: 20
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Learning Rate: 0.0001
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Device: cpu
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Seed: 42
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 模型配置:
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Hidden Size: 256
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Num Experts: 8
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Num Shared Experts: 2
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Num Task Experts: 2
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Gate Sparsity Lambda: 0.1
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - PCGrad配置:
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Enable PCGrad: True
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Conflict Threshold: 0.0
+2026-03-04 14:46:22,703 - MultimodalRec - INFO -   - Gradient Clip Norm: 1.0
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - 加载数据...
+2026-03-04 14:46:22,703 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,766 - MultimodalRec - INFO - 加载了 5000 条评论, 1 个物品
+2026-03-04 14:46:22,766 - MultimodalRec - INFO - 过滤低频交互...
+2026-03-04 14:46:22,768 - MultimodalRec - INFO - 创建数据加载器...
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - 训练批次数: 5
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - 验证批次数: 1
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - 测试批次数: 1
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - 创建模型...
+2026-03-04 14:46:22,771 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,890 - MultimodalRec - INFO - 模型参数: 总计 11,741,453, 可训练 11,741,453
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - 开始训练...
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - 
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - Epoch 1/20
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:46:22,891 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:35,090 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 多模态推荐系统 - PLE + PCGrad 梯度隔离方案
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 开始时间: 2026-03-04 14:48:35
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 输出目录: /home/z/my-project/multimodal_rec/outputs
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 训练配置:
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Batch Size: 64
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Epochs: 20
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Learning Rate: 0.0001
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Device: cpu
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Seed: 42
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 模型配置:
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Hidden Size: 256
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Num Experts: 8
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Num Shared Experts: 2
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Num Task Experts: 2
+2026-03-04 14:48:35,091 - MultimodalRec - INFO -   - Gate Sparsity Lambda: 0.1
+2026-03-04 14:48:35,091 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,092 - MultimodalRec - INFO - PCGrad配置:
+2026-03-04 14:48:35,092 - MultimodalRec - INFO -   - Enable PCGrad: True
+2026-03-04 14:48:35,092 - MultimodalRec - INFO -   - Conflict Threshold: 0.0
+2026-03-04 14:48:35,092 - MultimodalRec - INFO -   - Gradient Clip Norm: 1.0
+2026-03-04 14:48:35,092 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,092 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,092 - MultimodalRec - INFO - 加载数据...
+2026-03-04 14:48:35,092 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,156 - MultimodalRec - INFO - 加载了 5000 条评论, 1 个物品
+2026-03-04 14:48:35,156 - MultimodalRec - INFO - 过滤低频交互...
+2026-03-04 14:48:35,158 - MultimodalRec - INFO - 创建数据加载器...
+2026-03-04 14:48:35,161 - MultimodalRec - INFO - 训练批次数: 5
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - 验证批次数: 1
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - 测试批次数: 1
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - 创建模型...
+2026-03-04 14:48:35,162 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,275 - MultimodalRec - INFO - 模型参数: 总计 11,741,453, 可训练 11,741,453
+2026-03-04 14:48:35,275 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,275 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,275 - MultimodalRec - INFO - 开始训练...
+2026-03-04 14:48:35,275 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,276 - MultimodalRec - INFO - 
+2026-03-04 14:48:35,276 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,276 - MultimodalRec - INFO - Epoch 1/20
+2026-03-04 14:48:35,276 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:35,276 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:36,838 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2741 (Image=0.8028, Text=0.8218), 冲突率: 100.00%
+2026-03-04 14:48:41,390 - MultimodalRec - INFO - 
+2026-03-04 14:48:41,391 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:48:41,546 - MultimodalRec - INFO - 
+2026-03-04 14:48:41,547 - MultimodalRec - INFO - Epoch 1 总结:
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   训练 Loss: 2.2643, AUC: 0.4717
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   验证 Loss: 2.1665, AUC: 0.4500
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   图像 Loss: 0.7919
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   文本 Loss: 0.8143
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   学习率: 0.000100
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.379', '0.036', '0.112']
+2026-03-04 14:48:41,547 - MultimodalRec - INFO -   文本任务门控权重: ['0.333', '0.239', '0.220', '0.208']
+2026-03-04 14:48:41,607 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.4500)
+2026-03-04 14:48:41,607 - MultimodalRec - INFO - 
+2026-03-04 14:48:41,607 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:41,607 - MultimodalRec - INFO - Epoch 2/20
+2026-03-04 14:48:41,607 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:41,607 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:42,821 - MultimodalRec - INFO -   Batch 1/5: Loss=2.3062 (Image=0.7753, Text=0.8647), 冲突率: 100.00%
+2026-03-04 14:48:47,075 - MultimodalRec - INFO - 
+2026-03-04 14:48:47,075 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:48:47,225 - MultimodalRec - INFO - 
+2026-03-04 14:48:47,225 - MultimodalRec - INFO - Epoch 2 总结:
+2026-03-04 14:48:47,225 - MultimodalRec - INFO -   训练 Loss: 2.2654, AUC: 0.4538
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   验证 Loss: 2.1602, AUC: 0.5571
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   图像 Loss: 0.7777
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   文本 Loss: 0.8157
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   学习率: 0.000100
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   图像任务门控权重: ['0.451', '0.394', '0.057', '0.098']
+2026-03-04 14:48:47,226 - MultimodalRec - INFO -   文本任务门控权重: ['0.324', '0.281', '0.166', '0.230']
+2026-03-04 14:48:47,290 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.5571)
+2026-03-04 14:48:47,291 - MultimodalRec - INFO - 
+2026-03-04 14:48:47,291 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:47,291 - MultimodalRec - INFO - Epoch 3/20
+2026-03-04 14:48:47,291 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:47,291 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:48,466 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2411 (Image=0.7681, Text=0.8184), 冲突率: 0.00%
+2026-03-04 14:48:52,306 - MultimodalRec - INFO - 
+2026-03-04 14:48:52,306 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:48:52,456 - MultimodalRec - INFO - 
+2026-03-04 14:48:52,457 - MultimodalRec - INFO - Epoch 3 总结:
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   训练 Loss: 2.2954, AUC: 0.5337
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   验证 Loss: 2.1736, AUC: 0.5714
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   图像 Loss: 0.8004
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   文本 Loss: 0.8395
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   学习率: 0.000100
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.393', '0.036', '0.098']
+2026-03-04 14:48:52,457 - MultimodalRec - INFO -   文本任务门控权重: ['0.357', '0.257', '0.165', '0.220']
+2026-03-04 14:48:52,526 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.5714)
+2026-03-04 14:48:52,526 - MultimodalRec - INFO - 
+2026-03-04 14:48:52,526 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:52,526 - MultimodalRec - INFO - Epoch 4/20
+2026-03-04 14:48:52,527 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:52,527 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:53,603 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2233 (Image=0.7779, Text=0.7823), 冲突率: 100.00%
+2026-03-04 14:48:57,155 - MultimodalRec - INFO - 
+2026-03-04 14:48:57,155 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:48:57,327 - MultimodalRec - INFO - 
+2026-03-04 14:48:57,327 - MultimodalRec - INFO - Epoch 4 总结:
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   训练 Loss: 2.2518, AUC: 0.4290
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   验证 Loss: 2.1943, AUC: 0.5286
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   图像 Loss: 0.7812
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   文本 Loss: 0.7993
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   梯度冲突率: 40.00%
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   学习率: 0.000100
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   图像任务门控权重: ['0.462', '0.403', '0.034', '0.101']
+2026-03-04 14:48:57,328 - MultimodalRec - INFO -   文本任务门控权重: ['0.336', '0.239', '0.183', '0.242']
+2026-03-04 14:48:57,329 - MultimodalRec - INFO - 
+2026-03-04 14:48:57,329 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:57,329 - MultimodalRec - INFO - Epoch 5/20
+2026-03-04 14:48:57,329 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:48:57,329 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:48:58,409 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2641 (Image=0.8089, Text=0.7737), 冲突率: 100.00%
+2026-03-04 14:49:02,097 - MultimodalRec - INFO - 
+2026-03-04 14:49:02,098 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:02,247 - MultimodalRec - INFO - 
+2026-03-04 14:49:02,247 - MultimodalRec - INFO - Epoch 5 总结:
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   训练 Loss: 2.2759, AUC: 0.4373
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   验证 Loss: 2.2269, AUC: 0.5357
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   图像 Loss: 0.7815
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   文本 Loss: 0.8364
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   梯度冲突率: 80.00%
+2026-03-04 14:49:02,247 - MultimodalRec - INFO -   学习率: 0.000100
+2026-03-04 14:49:02,248 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.401', '0.047', '0.079']
+2026-03-04 14:49:02,248 - MultimodalRec - INFO -   文本任务门控权重: ['0.358', '0.261', '0.176', '0.205']
+2026-03-04 14:49:02,248 - MultimodalRec - INFO - 
+2026-03-04 14:49:02,248 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:02,248 - MultimodalRec - INFO - Epoch 6/20
+2026-03-04 14:49:02,248 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:02,248 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:03,467 - MultimodalRec - INFO -   Batch 1/5: Loss=2.3125 (Image=0.8107, Text=0.8550), 冲突率: 100.00%
+2026-03-04 14:49:07,171 - MultimodalRec - INFO - 
+2026-03-04 14:49:07,171 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:07,321 - MultimodalRec - INFO - 
+2026-03-04 14:49:07,321 - MultimodalRec - INFO - Epoch 6 总结:
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   训练 Loss: 2.2394, AUC: 0.4608
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   验证 Loss: 2.2385, AUC: 0.5286
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   图像 Loss: 0.7729
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   文本 Loss: 0.8175
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   梯度冲突率: 100.00%
+2026-03-04 14:49:07,321 - MultimodalRec - INFO -   学习率: 0.000099
+2026-03-04 14:49:07,322 - MultimodalRec - INFO -   图像任务门控权重: ['0.462', '0.401', '0.036', '0.101']
+2026-03-04 14:49:07,322 - MultimodalRec - INFO -   文本任务门控权重: ['0.355', '0.264', '0.179', '0.202']
+2026-03-04 14:49:07,322 - MultimodalRec - INFO - 
+2026-03-04 14:49:07,322 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:07,322 - MultimodalRec - INFO - Epoch 7/20
+2026-03-04 14:49:07,322 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:07,322 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:08,498 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2518 (Image=0.7671, Text=0.7891), 冲突率: 0.00%
+2026-03-04 14:49:12,336 - MultimodalRec - INFO - 
+2026-03-04 14:49:12,336 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:12,487 - MultimodalRec - INFO - 
+2026-03-04 14:49:12,487 - MultimodalRec - INFO - Epoch 7 总结:
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   训练 Loss: 2.2029, AUC: 0.3691
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   验证 Loss: 2.2994, AUC: 0.6714
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   图像 Loss: 0.7454
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   文本 Loss: 0.7832
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   梯度冲突率: 20.00%
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   学习率: 0.000099
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   图像任务门控权重: ['0.452', '0.381', '0.065', '0.101']
+2026-03-04 14:49:12,488 - MultimodalRec - INFO -   文本任务门控权重: ['0.322', '0.264', '0.200', '0.214']
+2026-03-04 14:49:12,553 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.6714)
+2026-03-04 14:49:12,553 - MultimodalRec - INFO - 
+2026-03-04 14:49:12,554 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:12,554 - MultimodalRec - INFO - Epoch 8/20
+2026-03-04 14:49:12,554 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:12,554 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:13,748 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2533 (Image=0.7648, Text=0.8083), 冲突率: 0.00%
+2026-03-04 14:49:17,657 - MultimodalRec - INFO - 
+2026-03-04 14:49:17,658 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:17,811 - MultimodalRec - INFO - 
+2026-03-04 14:49:17,811 - MultimodalRec - INFO - Epoch 8 总结:
+2026-03-04 14:49:17,811 - MultimodalRec - INFO -   训练 Loss: 2.2409, AUC: 0.3358
+2026-03-04 14:49:17,811 - MultimodalRec - INFO -   验证 Loss: 2.5084, AUC: 0.7571
+2026-03-04 14:49:17,811 - MultimodalRec - INFO -   图像 Loss: 0.7665
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   文本 Loss: 0.8135
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   梯度冲突率: 40.00%
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   学习率: 0.000099
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   图像任务门控权重: ['0.474', '0.394', '0.054', '0.078']
+2026-03-04 14:49:17,812 - MultimodalRec - INFO -   文本任务门控权重: ['0.322', '0.254', '0.184', '0.239']
+2026-03-04 14:49:17,879 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.7571)
+2026-03-04 14:49:17,879 - MultimodalRec - INFO - 
+2026-03-04 14:49:17,879 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:17,879 - MultimodalRec - INFO - Epoch 9/20
+2026-03-04 14:49:17,879 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:17,879 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:19,091 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2119 (Image=0.7812, Text=0.7779), 冲突率: 0.00%
+2026-03-04 14:49:22,857 - MultimodalRec - INFO - 
+2026-03-04 14:49:22,858 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:23,007 - MultimodalRec - INFO - 
+2026-03-04 14:49:23,007 - MultimodalRec - INFO - Epoch 9 总结:
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   训练 Loss: 2.2231, AUC: 0.2940
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   验证 Loss: 3.7414, AUC: 0.8000
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   图像 Loss: 0.7724
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   文本 Loss: 0.8009
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:23,007 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:49:23,008 - MultimodalRec - INFO -   学习率: 0.000098
+2026-03-04 14:49:23,008 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.406', '0.034', '0.087']
+2026-03-04 14:49:23,008 - MultimodalRec - INFO -   文本任务门控权重: ['0.333', '0.287', '0.173', '0.206']
+2026-03-04 14:49:23,076 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.8000)
+2026-03-04 14:49:23,076 - MultimodalRec - INFO - 
+2026-03-04 14:49:23,076 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:23,076 - MultimodalRec - INFO - Epoch 10/20
+2026-03-04 14:49:23,076 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:23,076 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:24,147 - MultimodalRec - INFO -   Batch 1/5: Loss=2.1944 (Image=0.7569, Text=0.7834), 冲突率: 0.00%
+2026-03-04 14:49:27,849 - MultimodalRec - INFO - 
+2026-03-04 14:49:27,850 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:27,997 - MultimodalRec - INFO - 
+2026-03-04 14:49:27,997 - MultimodalRec - INFO - Epoch 10 总结:
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   训练 Loss: 2.2307, AUC: 0.3453
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   验证 Loss: 8.2145, AUC: 0.8429
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   图像 Loss: 0.7640
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   文本 Loss: 0.8056
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   学习率: 0.000098
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   图像任务门控权重: ['0.462', '0.406', '0.034', '0.098']
+2026-03-04 14:49:27,997 - MultimodalRec - INFO -   文本任务门控权重: ['0.344', '0.270', '0.194', '0.192']
+2026-03-04 14:49:28,065 - MultimodalRec - INFO -   ★ 保存最佳模型 (AUC: 0.8429)
+2026-03-04 14:49:28,066 - MultimodalRec - INFO - 
+2026-03-04 14:49:28,066 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:28,066 - MultimodalRec - INFO - Epoch 11/20
+2026-03-04 14:49:28,066 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:28,066 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:29,222 - MultimodalRec - INFO -   Batch 1/5: Loss=2.2175 (Image=0.7842, Text=0.7726), 冲突率: 0.00%
+2026-03-04 14:49:33,033 - MultimodalRec - INFO - 
+2026-03-04 14:49:33,033 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:33,182 - MultimodalRec - INFO - 
+2026-03-04 14:49:33,182 - MultimodalRec - INFO - Epoch 11 总结:
+2026-03-04 14:49:33,182 - MultimodalRec - INFO -   训练 Loss: 2.1988, AUC: 0.4187
+2026-03-04 14:49:33,182 - MultimodalRec - INFO -   验证 Loss: 17.8934, AUC: 0.8071
+2026-03-04 14:49:33,182 - MultimodalRec - INFO -   图像 Loss: 0.7501
+2026-03-04 14:49:33,182 - MultimodalRec - INFO -   文本 Loss: 0.7630
+2026-03-04 14:49:33,183 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:33,183 - MultimodalRec - INFO -   梯度冲突率: 40.00%
+2026-03-04 14:49:33,183 - MultimodalRec - INFO -   学习率: 0.000098
+2026-03-04 14:49:33,183 - MultimodalRec - INFO -   图像任务门控权重: ['0.462', '0.406', '0.034', '0.098']
+2026-03-04 14:49:33,183 - MultimodalRec - INFO -   文本任务门控权重: ['0.346', '0.290', '0.170', '0.194']
+2026-03-04 14:49:33,183 - MultimodalRec - INFO - 
+2026-03-04 14:49:33,183 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:33,183 - MultimodalRec - INFO - Epoch 12/20
+2026-03-04 14:49:33,183 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:33,183 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:34,347 - MultimodalRec - INFO -   Batch 1/5: Loss=2.1936 (Image=0.7567, Text=0.7697), 冲突率: 100.00%
+2026-03-04 14:49:38,206 - MultimodalRec - INFO - 
+2026-03-04 14:49:38,206 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:38,359 - MultimodalRec - INFO - 
+2026-03-04 14:49:38,359 - MultimodalRec - INFO - Epoch 12 总结:
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   训练 Loss: 2.1751, AUC: 0.2959
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   验证 Loss: 37.0562, AUC: 0.6286
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   图像 Loss: 0.7410
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   文本 Loss: 0.7793
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   学习率: 0.000097
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   图像任务门控权重: ['0.462', '0.407', '0.033', '0.098']
+2026-03-04 14:49:38,359 - MultimodalRec - INFO -   文本任务门控权重: ['0.357', '0.281', '0.147', '0.215']
+2026-03-04 14:49:38,359 - MultimodalRec - INFO - 
+2026-03-04 14:49:38,359 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:38,360 - MultimodalRec - INFO - Epoch 13/20
+2026-03-04 14:49:38,360 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:38,360 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:39,546 - MultimodalRec - INFO -   Batch 1/5: Loss=2.1873 (Image=0.7472, Text=0.7665), 冲突率: 100.00%
+2026-03-04 14:49:43,358 - MultimodalRec - INFO - 
+2026-03-04 14:49:43,359 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:43,508 - MultimodalRec - INFO - 
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - Epoch 13 总结:
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   训练 Loss: 2.1856, AUC: 0.2573
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   验证 Loss: 72.6995, AUC: 0.6286
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   图像 Loss: 0.7418
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   文本 Loss: 0.7902
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   学习率: 0.000097
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.398', '0.033', '0.096']
+2026-03-04 14:49:43,509 - MultimodalRec - INFO -   文本任务门控权重: ['0.324', '0.280', '0.189', '0.208']
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - 
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - Epoch 14/20
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:43,509 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:44,676 - MultimodalRec - INFO -   Batch 1/5: Loss=2.1393 (Image=0.7429, Text=0.7567), 冲突率: 100.00%
+2026-03-04 14:49:48,509 - MultimodalRec - INFO - 
+2026-03-04 14:49:48,509 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:48,659 - MultimodalRec - INFO - 
+2026-03-04 14:49:48,659 - MultimodalRec - INFO - Epoch 14 总结:
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   训练 Loss: 2.1961, AUC: 0.3505
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   验证 Loss: 135.7874, AUC: 0.6286
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   图像 Loss: 0.7593
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   文本 Loss: 0.7853
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   梯度冲突率: 60.00%
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   学习率: 0.000096
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.409', '0.033', '0.086']
+2026-03-04 14:49:48,660 - MultimodalRec - INFO -   文本任务门控权重: ['0.335', '0.268', '0.167', '0.230']
+2026-03-04 14:49:48,660 - MultimodalRec - INFO - 
+2026-03-04 14:49:48,660 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:48,660 - MultimodalRec - INFO - Epoch 15/20
+2026-03-04 14:49:48,660 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:48,660 - MultimodalRec - INFO - 训练阶段:
+2026-03-04 14:49:49,862 - MultimodalRec - INFO -   Batch 1/5: Loss=2.1325 (Image=0.7716, Text=0.7178), 冲突率: 0.00%
+2026-03-04 14:49:53,815 - MultimodalRec - INFO - 
+2026-03-04 14:49:53,816 - MultimodalRec - INFO - 验证阶段:
+2026-03-04 14:49:53,968 - MultimodalRec - INFO - 
+2026-03-04 14:49:53,968 - MultimodalRec - INFO - Epoch 15 总结:
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   训练 Loss: 2.1519, AUC: 0.2685
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   验证 Loss: 243.7823, AUC: 0.6286
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   图像 Loss: 0.7418
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   文本 Loss: 0.7541
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   稀疏度 Loss: 0.1386
+2026-03-04 14:49:53,968 - MultimodalRec - INFO -   梯度冲突率: 40.00%
+2026-03-04 14:49:53,969 - MultimodalRec - INFO -   学习率: 0.000095
+2026-03-04 14:49:53,969 - MultimodalRec - INFO -   图像任务门控权重: ['0.473', '0.365', '0.043', '0.118']
+2026-03-04 14:49:53,969 - MultimodalRec - INFO -   文本任务门控权重: ['0.358', '0.279', '0.167', '0.195']
+2026-03-04 14:49:53,969 - MultimodalRec - INFO - 
+Early stopping at epoch 15
+2026-03-04 14:49:53,969 - MultimodalRec - INFO - 
+2026-03-04 14:49:53,969 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:53,969 - MultimodalRec - INFO - 最终测试集评估...
+2026-03-04 14:49:53,969 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:53,998 - MultimodalRec - INFO - 加载最佳模型 (Epoch 10)
+2026-03-04 14:49:54,153 - MultimodalRec - INFO - 
+2026-03-04 14:49:54,153 - MultimodalRec - INFO - 测试集结果:
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   ndcg@5: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   ndcg@10: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   ndcg@20: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   hit_rate@5: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   hit_rate@10: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   hit_rate@20: 0.9000
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   loss: 7.7415
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   image_loss: 6.3863
+2026-03-04 14:49:54,153 - MultimodalRec - INFO -   text_loss: 0.8064
+2026-03-04 14:49:54,153 - MultimodalRec - INFO - 
+2026-03-04 14:49:54,153 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - 梯度冲突统计:
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   total_steps: 75
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   avg_conflict_ratio: 0.56
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   max_conflict_ratio: 1.0
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   min_conflict_ratio: 0.0
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - 
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - 训练总结:
+2026-03-04 14:49:54,154 - MultimodalRec - INFO - ======================================================================
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   最佳 Epoch: 10
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   最佳验证 AUC: 0.8429
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   测试 AUC: 0.5000
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   测试 LogLoss: 0.3395
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   平均梯度冲突率: 56.00%
+2026-03-04 14:49:54,154 - MultimodalRec - INFO -   结束时间: 2026-03-04 14:49:54

@@ -35,13 +35,17 @@ ENV/
 data/*.jsonl
 data/*.parquet
 data/*_images/
+data/raw/
 !data/.gitkeep
+!data/data_analysis_report.json
 
-# Outputs
-outputs/
-*.pt
-*.pth
-*.ckpt
+# Outputs - 保留分析报告，排除大文件
+outputs/*.pt
+outputs/*.pth
+outputs/*.ckpt
+!outputs/training.log
+!outputs/training_analysis_report.md
+!outputs/training_history.json
 
 # Logs
 *.log
